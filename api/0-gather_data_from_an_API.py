@@ -60,7 +60,7 @@ if __name__ == "__main__":
     employee_name = user_response.json().get("name")
 
     # Get TODOs
-    todos_response =requests.get(todos_url)
+    todos_response = requests.get(todos_url)
     todos = todos_response.json()
 
     # filter completed tasks
