@@ -66,6 +66,8 @@ if __name__ == "__main__":
     # filter completed tasks
     done_tasks = [task for task in todos if task.get("completed")]
 
-    print(f"Employee {employee_name} is done with tasks({len(done_tasks)})")
+    print(
+        f"Employee {employee_name} is done with tasks({len(done_tasks)})"
+        )
     for task in done_tasks:
         print(f"\t {task.get('title')}")
