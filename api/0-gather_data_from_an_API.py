@@ -1,4 +1,38 @@
 #!/usr/bin/python3
+"""
+Module: 0-gather_data_from_an_API
+This module fetches and displays information about
+an employee's TODO list progress
+using the JSONPlaceholder API. It retrieves the
+employee's name and their completed tasks
+based on the provided employee ID.
+Usage:
+    Run the script with the employee ID as a command-line argument:
+        python3 0-gather_data_from_an_API.py <employee_id>
+Example:
+    python3 0-gather_data_from_an_API.py 1
+Functions:
+    This script does not define any functions but performs
+    the following operations:
+    - Validates the command-line argument for employee ID.
+    - Fetches employee details from the JSONPlaceholder API.
+    - Fetches TODO list items for the employee.
+    - Filters and displays the completed tasks.
+Dependencies:
+    - requests: Used for making HTTP requests to the API.
+    - sys: Used for handling command-line arguments and exiting the program.
+API Endpoints:
+    - https://jsonplaceholder.typicode.com/users/<employee_id>:
+    Retrieves employee details.
+    - https://jsonplaceholder.typicode.com/todos?userId=<employee_id>:
+    Retrieves TODO list items.
+Error Handling:
+    - Ensures the employee ID is provided and is an integer.
+    - Handles cases where the employee is not found or the API request fails.
+Output:
+    Displays the employee's name, the number of
+    completed tasks, and the titles of those tasks.
+"""
 import requests
 import sys
 
@@ -15,7 +49,9 @@ if __name__ == "__main__":
 
     # API endpoints
     user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
-    todos_url = f"https://jsonplaceholder.typicode.com/todos?userId={employee_id}"
+    todos_url = (
+        f"https://jsonplaceholder.typicode.com/todos?userId={employee_id}"
+    )
 
     # Get employee data
     user_response = requests.get(user_url)
@@ -26,12 +62,15 @@ if __name__ == "__main__":
     employee_name = user_response.json().get("name")
 
     # Get TODOs
-    todos_response =requests.get(todos_url)
+    todos_response = requests.get(todos_url)
     todos = todos_response.json()
 
     # filter completed tasks
     done_tasks = [task for task in todos if task.get("completed")]
 
-    print(f"Employee {employee_name} is done with tasks({len(done_tasks)})")
+    print(
+        f"Employee {employee_name} is done with tasks"
+        f"({len(done_tasks)}/{len(todos)}):"
+        )
     for task in done_tasks:
         print(f"\t {task.get('title')}")
