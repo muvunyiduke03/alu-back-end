@@ -48,9 +48,11 @@ if __name__ == "__main__":
         sys.exit(1)
 
     # API endpoints
-    user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
+    user_url = (
+        "https://jsonplaceholder.typicode.com/users/{}".format(employee_id)
+    )
     todos_url = (
-        f"https://jsonplaceholder.typicode.com/todos?userId={employee_id}"
+        "https://jsonplaceholder.typicode.com/todos?userId={}".format(employee_id)
     )
 
     # Get employee data
