@@ -52,7 +52,8 @@ if __name__ == "__main__":
         "https://jsonplaceholder.typicode.com/users/{}".format(employee_id)
     )
     todos_url = (
-        "https://jsonplaceholder.typicode.com/todos?userId={}".format(employee_id)
+        "https://jsonplaceholder.typicode.com/todos?userId={}"
+        .format(employee_id)
     )
 
     # Get employee data
