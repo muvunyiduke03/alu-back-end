@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 """
 Module: 0-gather_data_from_an_API
-This module fetches and displays information about an employee's TODO list progress 
-using the JSONPlaceholder API. It retrieves the employee's name and their completed tasks 
+This module fetches and displays information about 
+an employee's TODO list progress 
+using the JSONPlaceholder API. It retrieves the 
+employee's name and their completed tasks 
 based on the provided employee ID.
 Usage:
     Run the script with the employee ID as a command-line argument:
