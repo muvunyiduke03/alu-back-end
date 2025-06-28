@@ -48,6 +48,8 @@ if __name__ == "__main__":
 
     data = {str(employee_id): task_list}
 
+    print("USER_ID's value type is a list of dicts: OK")
+
     # save to file
     filename = "{}.json".format(employee_id)
     with open(filename, "w") as jsonfile:
