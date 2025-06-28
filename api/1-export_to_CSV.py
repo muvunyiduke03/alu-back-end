@@ -4,9 +4,10 @@ Exports data of an employee's TODO list to a CSV file.
 Format: "USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"
 """
 
+import csv
 import requests
 import sys
-import csv
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
@@ -18,7 +19,6 @@ if __name__ == "__main__":
     except ValueError:
         print("Employee ID must be an integer")
         sys.exit(1)
-
 
     base_url = "https://jsonplaceholder.typicode.com"
     user_url = "{}/users/{}".format(base_url, employee_id)
