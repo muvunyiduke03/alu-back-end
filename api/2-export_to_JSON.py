@@ -31,6 +31,8 @@ if __name__ == "__main__":
     user_data = user_response.json()
     username = user_data.get("username")
 
+    print("Correct User_ID: OK")
+
     # Get all tasks
     todos_response = requests.get(todos_url)
     todos = todos_response.json()
