@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
 Exports data of all employees' TODO lists to a JSON file.
-Format: { "USER_ID": [ {"username": "USERNAME", "task": "TASK_TITLE", "completed": TASK_COMPLETED_STATUS}, ...]}
+Format: { "USER_ID": [ {"username": "USERNAME", "task": "TASK_TITLE",
+"completed": TASK_COMPLETED_STATUS}, ...]}
 """
 
 import json
