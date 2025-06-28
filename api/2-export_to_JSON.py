@@ -31,8 +31,6 @@ if __name__ == "__main__":
     user_data = user_response.json()
     username = user_data.get("username")
 
-    print("Correct User_ID: OK")
-
     # Get all tasks
     todos_response = requests.get(todos_url)
     todos = todos_response.json()
@@ -47,8 +45,6 @@ if __name__ == "__main__":
         })
 
     data = {str(employee_id): task_list}
-
-    print("USER_ID's value type is a list of dicts: OK")
 
     # save to file
     filename = "{}.json".format(employee_id)
